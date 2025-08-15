@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="400">
-    <!-- Image from GitHub -->
-    <image xlink:href="https://raw.githubusercontent.com/SrPeterr/okokvehicle-images/refs/heads/main/vehicles-rp/blista2.png" x="0" y="0" width="600" height="400" preserveAspectRatio="xMidYMid meet" />
+    <!-- Image from Wikimedia Commons (reliable public domain image) -->
+    <image xlink:href="https://upload.wikimedia.org/wikipedia/commons/0/0a/PNG_transparency_demonstration_1.png" x="0" y="0" width="600" height="400" preserveAspectRatio="xMidYMid meet" />
     
     <!-- Visual Elements -->
     <rect x="0" y="0" width="600" height="400" fill="rgba(0,0,255,0.3)" stroke="black" stroke-width="3" onclick="alert('XSS PoC: Clicked rectangle!');" />
