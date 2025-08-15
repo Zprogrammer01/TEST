@@ -48,7 +48,7 @@
             div.style.border = '2px solid black';
             div.style.padding = '10px';
             div.style.textAlign = 'center';
-            div.innerHTML = 'XSS PoC: Custom DOM pop-up<br><button onclick="this.parentNode.parentNode.remove()">Close</button>';
+            div.innerHTML = 'XSS PoC: Custom DOM pop-up<br/><button onclick="this.parentNode.parentNode.remove()">Close</button>';
             popup.appendChild(div);
             document.querySelector('svg').appendChild(popup);
         }, 6000);
@@ -64,7 +64,7 @@
                     div.style.border = '2px solid red';
                     div.style.padding = '10px';
                     div.style.textAlign = 'center';
-                    div.innerHTML = 'XSS PoC: HTML pop-up via foreignObject<br><button onclick="this.parentNode.remove()">Close</button>';
+                    div.innerHTML = 'XSS PoC: HTML pop-up via foreignObject<br/><button onclick="this.parentNode.remove()">Close</button>';
                     document.body.appendChild(div);
                 }, 8000);
             </script>
